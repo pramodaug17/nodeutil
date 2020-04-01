@@ -1,12 +1,12 @@
 import * as passport from "passport"
-import { PassportNS } from "./types";
+import { SessionNS } from "./types";
 
 export class awesomepassport {
-    private _serializeFn: PassportNS.SerializeDeserializeFn;
-    private _deserializeFn: PassportNS.SerializeDeserializeFn;
+    private _serializeFn: SessionNS.SerializeDeserializeFn;
+    private _deserializeFn: SessionNS.SerializeDeserializeFn;
     private _strategy: passport.Strategy;
 
-    constructor(opts: PassportNS.IPassportOptions) {
+    constructor(opts: SessionNS.IPassportOptions) {
         this._serializeFn = opts.serialize;
         this._deserializeFn = opts.deserialize;
         this._strategy = opts.strategy
@@ -39,17 +39,17 @@ export class awesomepassport {
     /**
      * Getter and Setter Methods
      */
-    get serializeFn(): PassportNS.SerializeDeserializeFn {
+    get serializeFn(): SessionNS.SerializeDeserializeFn {
         return this._serializeFn;
     }
-    set serializeFn(newValue: PassportNS.SerializeDeserializeFn) {
+    set serializeFn(newValue: SessionNS.SerializeDeserializeFn) {
         this._serializeFn = newValue;
     }
 
-    get deserializeFn(): PassportNS.SerializeDeserializeFn {
+    get deserializeFn(): SessionNS.SerializeDeserializeFn {
         return this._deserializeFn;
     }
-    set deserializeFn(newValue: PassportNS.SerializeDeserializeFn) {
+    set deserializeFn(newValue: SessionNS.SerializeDeserializeFn) {
         this._deserializeFn = newValue;
     }
 
@@ -60,3 +60,5 @@ export class awesomepassport {
         this._strategy = newValue;
     }
 }
+
+export let authPassport = passport.authenticate

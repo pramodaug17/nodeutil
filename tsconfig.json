@@ -1,8 +1,9 @@
 {
     "files": [
         "src/index.ts",
-        "src/session/index.ts",
-        "src/passport/index.ts"
+        "src/session-passport/index.ts",
+        "src/session-passport/session.ts",
+        "src/session-passport/passport.wrap.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

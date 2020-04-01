@@ -1,4 +1,9 @@
+import * as passport from "passport"
+import { Application } from "express"
+
 export declare namespace SessionNS {
+    export interface IApplication extends Application {}
+    
     export interface ISessionOptions {
         secret: string | string[];
         name?: string;
@@ -27,4 +32,15 @@ export declare namespace SessionNS {
          */
         unset?: 'destroy' | 'keep';
     }
+
+    export type SerializeDeserializeFn = () => void;
+
+    export interface IPassportOptions {
+        serialize: SerializeDeserializeFn
+        deserialize: SerializeDeserializeFn
+        strategy: passport.Strategy
+    }
+
+    export interface IStrategy extends passport.Strategy {}
+    export interface IAuthenticateOptions extends passport.AuthenticateOptions {}
 }
