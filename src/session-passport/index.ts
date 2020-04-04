@@ -11,9 +11,7 @@ class AwSession {
     private _passport: awesomepassport;
     private _exSession: exSession;
 
-    constructor(opts?: awesomesessionNS.awesomesessionOptions) {
-        this._passport = new awesomepassport(opts);
-        this._exSession = new exSession(opts);
+    constructor() {
     }
 
     /**
@@ -50,7 +48,10 @@ class AwSession {
     /**
      * name
      */
-    public init(app: SessionNS.IApplication) {
+    public init(app: SessionNS.IApplication, opts?: awesomesessionNS.awesomesessionOptions) {
+        this._passport = new awesomepassport(opts);
+        this._exSession = new exSession(opts);
+
         this._passport.init();
         app.use(this._exSession.init());
         app.use(this._passport.self());
