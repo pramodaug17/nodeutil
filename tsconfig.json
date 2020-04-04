@@ -9,6 +9,12 @@
         "noImplicitAny": true,
         "declaration": true,
         "target": "es5",
-        "module": "CommonJS"
+        "module": "CommonJS",
+        "types": [
+            "node",
+            "express-session",
+            "passport",
+            "jasmine"
+        ]
     }
 }

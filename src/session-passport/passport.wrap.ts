@@ -1,15 +1,16 @@
 import * as passport from "passport"
 import { SessionNS } from "./types";
+import { isArray } from "util";
 
 export class awesomepassport {
     private _serializeFn: SessionNS.SerializeDeserializeFn;
     private _deserializeFn: SessionNS.SerializeDeserializeFn;
-    private _strategy: passport.Strategy;
+    private _strategy: SessionNS.IStrategy | SessionNS.IStrategy[];
 
     constructor(opts: SessionNS.IPassportOptions) {
         this._serializeFn = opts.serialize;
         this._deserializeFn = opts.deserialize;
-        this._strategy = opts.strategy
+        this._strategy = opts.strategy;
     }
 
     /**
@@ -23,7 +24,14 @@ export class awesomepassport {
             return;
         }
 
-        passport.use(this._strategy);
+        if(isArray(this._strategy)) {
+            for (let index in this._strategy) {
+                let element = this._strategy[index];
+                passport.use(element.name, element.object);
+            }
+        } else {
+            passport.use(this._strategy.name, this._strategy.object);
+        }
         passport.serializeUser(this._serializeFn);
         passport.deserializeUser(this._deserializeFn);
     }
@@ -34,6 +42,10 @@ export class awesomepassport {
 
     public session() {
         return passport.session();
+    }
+
+    public authPassport(strategy: string | string[], cb: (...args: any[])=>void) {
+        return passport.authenticate(strategy, cb);
     }
 
     /**
@@ -53,12 +65,12 @@ export class awesomepassport {
         this._deserializeFn = newValue;
     }
 
-    get strategy(): passport.Strategy {
+    get strategy(): SessionNS.IStrategy | SessionNS.IStrategy[] {
         return this._strategy;
     }
-    set strategy(newValue: passport.Strategy) {
+    set strategy(newValue: SessionNS.IStrategy | SessionNS.IStrategy[]) {
         this._strategy = newValue;
     }
 }
 
-export let authPassport = passport.authenticate
+// export let authPassport = passport.authenticate

@@ -1,6 +1,7 @@
 gulpfile.js/
 src/
 test/
+spec/
 
 tsconfig.json
 *.code-workspace

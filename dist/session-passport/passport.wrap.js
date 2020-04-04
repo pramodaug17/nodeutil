@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var passport = require("passport");
+var util_1 = require("util");
 var awesomepassport = /** @class */ (function () {
     function awesomepassport(opts) {
         this._serializeFn = opts.serialize;
@@ -17,7 +18,15 @@ var awesomepassport = /** @class */ (function () {
         if (!this._strategy || !this._serializeFn || !this._deserializeFn) {
             return;
         }
-        passport.use(this._strategy);
+        if (util_1.isArray(this._strategy)) {
+            for (var index in this._strategy) {
+                var element = this._strategy[index];
+                passport.use(element.name, element.object);
+            }
+        }
+        else {
+            passport.use(this._strategy.name, this._strategy.object);
+        }
         passport.serializeUser(this._serializeFn);
         passport.deserializeUser(this._deserializeFn);
     };
@@ -26,6 +35,9 @@ var awesomepassport = /** @class */ (function () {
     };
     awesomepassport.prototype.session = function () {
         return passport.session();
+    };
+    awesomepassport.prototype.authPassport = function (strategy, cb) {
+        return passport.authenticate(strategy, cb);
     };
     Object.defineProperty(awesomepassport.prototype, "serializeFn", {
         /**
@@ -63,4 +75,4 @@ var awesomepassport = /** @class */ (function () {
     return awesomepassport;
 }());
 exports.awesomepassport = awesomepassport;
-exports.authPassport = passport.authenticate;
+// export let authPassport = passport.authenticate

@@ -4,7 +4,9 @@
   "description": "Utilities for Node and Express server",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Test\""
+    "test": "gulp test",
+    "build": "gulp compile",
+    "release": "gulp"
   },
   "repository": {
     "type": "git",
@@ -28,14 +30,18 @@
   },
   "devDependencies": {
     "@types/express-session": "^1.17.0",
+    "@types/jasmine": "^3.5.10",
     "@types/node": "^13.9.5",
     "@types/passport": "^1.0.3",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
     "gulp": "^4.0.2",
+    "gulp-jasmine": "^4.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "jasmine": "^3.5.0",
+    "jasmine-ts-console-reporter": "^3.1.1",
     "typescript": "^3.8.3",
     "vinyl-buffer": "^1.0.1"
   }

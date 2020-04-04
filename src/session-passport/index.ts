@@ -1,6 +1,6 @@
 import { exSession } from "./session"
 import { SessionNS } from "./types" 
-import { awesomepassport, authPassport } from "./passport.wrap"
+import { awesomepassport } from "./passport.wrap"
 
 
 declare namespace awesomesessionNS {
@@ -58,8 +58,8 @@ class AwSession {
         app.use(this._passport.session());
     }
 
-    public static authenticate(strategy:string | string[], option:SessionNS.IAuthenticateOptions,  cb?:any) {
-        return authPassport(strategy, option, cb)
+    public authenticate(strategy:string | string[], option:SessionNS.IAuthenticateOptions,  cb?:any) {
+        return this._passport.authPassport(strategy, cb)
     }
 }
 
@@ -67,8 +67,3 @@ class AwSession {
  * Node js Singleton
  */
 module.exports = new AwSession()
-
-/**
- * Other Node module exports
- */
-module.exports.authenticate = AwSession.authenticate;

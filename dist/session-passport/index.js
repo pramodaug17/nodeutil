@@ -3,9 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var session_1 = require("./session");
 var passport_wrap_1 = require("./passport.wrap");
 var AwSession = /** @class */ (function () {
-    function AwSession(opts) {
-        this._passport = new passport_wrap_1.awesomepassport(opts);
-        this._exSession = new session_1.exSession(opts);
+    function AwSession() {
     }
     Object.defineProperty(AwSession.prototype, "secret", {
         /**
@@ -62,14 +60,16 @@ var AwSession = /** @class */ (function () {
     /**
      * name
      */
-    AwSession.prototype.init = function (app) {
+    AwSession.prototype.init = function (app, opts) {
+        this._passport = new passport_wrap_1.awesomepassport(opts);
+        this._exSession = new session_1.exSession(opts);
         this._passport.init();
         app.use(this._exSession.init());
         app.use(this._passport.self());
         app.use(this._passport.session());
     };
-    AwSession.authenticate = function (strategy, option, cb) {
-        return passport_wrap_1.authPassport(strategy, option, cb);
+    AwSession.prototype.authenticate = function (strategy, option, cb) {
+        return this._passport.authPassport(strategy, cb);
     };
     return AwSession;
 }());
@@ -77,7 +77,3 @@ var AwSession = /** @class */ (function () {
  * Node js Singleton
  */
 module.exports = new AwSession();
-/**
- * Other Node module exports
- */
-module.exports.authenticate = AwSession.authenticate;

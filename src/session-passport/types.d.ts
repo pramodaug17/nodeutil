@@ -34,13 +34,16 @@ export declare namespace SessionNS {
     }
 
     export type SerializeDeserializeFn = () => void;
+    export interface IStrategy {
+        name: string
+        object: passport.Strategy
+    }
 
     export interface IPassportOptions {
         serialize: SerializeDeserializeFn
         deserialize: SerializeDeserializeFn
-        strategy: passport.Strategy
+        strategy: IStrategy | IStrategy[]
     }
 
-    export interface IStrategy extends passport.Strategy {}
     export interface IAuthenticateOptions extends passport.AuthenticateOptions {}
 }
