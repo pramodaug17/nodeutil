@@ -4,7 +4,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/pramodaug17/nodeutil)
 ![npm](https://img.shields.io/npm/dw/@pramodaug17/server-util)
 ---
-server-util is a utility package which is [Express](https://www.expressjs.com) compatible. It has many useful utility that can minimize your code.   
+[server-util](https://www.npmjs.com/package/@pramodaug17/server-util) is a utility package which is [Express](https://www.expressjs.com) compatible. It has many useful utility that can minimize your code.   
 
 ## Install
 ```bash
