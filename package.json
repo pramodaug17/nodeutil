@@ -4,10 +4,11 @@
   "description": "Utilities for Node and Express server",
   "main": "dist/index.js",
   "scripts": {
+    "pretest": "npm run build",
     "test": "gulp test",
-    "test:jest": "jest",
+    "posttest": "gulp clean",
     "build": "gulp compile",
-    "release": "gulp compile && jest && codecov"
+    "release": "gulp release && codecov"
   },
   "repository": {
     "type": "git",
@@ -34,11 +35,13 @@
     "@types/node": "^13.9.5",
     "@types/passport": "^1.0.3",
     "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "jest": "^25.2.7",
+    "jest-cli": "^25.2.7",
     "typescript": "^3.8.3",
-    "vinyl-buffer": "^1.0.1",
-    "jest": "^25.2.7"
+    "vinyl-buffer": "^1.0.1"
   },
   "jest": {
     "coverageDirectory": "./test/coverage/",

@@ -1,7 +1,7 @@
 let path = require("path")
-let awesomepassport = require(path.resolve("./dist/")).session_passport;
+let awesomepassport = require(path.resolve("./")).session_passport;
 function dummyfn(thees, req, options) {
-
+    
 }
 
 let dummyapp = {
@@ -24,7 +24,7 @@ let sessionStorage = {
 }
 
 
-describe("awesomepassport init function", () => {
+describe("init function", () => {
 
     test("should be defined", () => {
         expect(awesomepassport.init).toBeDefined();
@@ -67,4 +67,11 @@ describe("awesomepassport init function", () => {
             deserialize: () => {},
         })).toBe(undefined);
     });
-})
+});
+
+describe("authenticate function", () => {
+
+    test("should be defined", () => {
+        expect(awesomepassport.authenticate("local", ()=> {})).toBeDefined();
+    });
+});

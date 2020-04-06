@@ -59,7 +59,7 @@ class AwSession {
     }
 
     public authenticate(strategy:string | string[], option:SessionNS.IAuthenticateOptions,  cb?:any) {
-        return this._passport.authPassport(strategy, cb)
+        return this._passport.authPassport(strategy, option, cb)
     }
 }
 

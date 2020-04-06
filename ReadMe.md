@@ -1,9 +1,11 @@
 # server-util
 ![npm (custom registry)](https://img.shields.io/npm/v/@pramodaug17/server-util/latest?style=plastic)
 ![NPM](https://img.shields.io/npm/l/@pramodaug17/server-util)
+[![codecov](https://codecov.io/gh/pramodaug17/nodeutil/branch/master/graph/badge.svg)](https://codecov.io/gh/pramodaug17/nodeutil)
 ![GitHub issues](https://img.shields.io/github/issues/pramodaug17/nodeutil)
 ![npm](https://img.shields.io/npm/dw/@pramodaug17/server-util)
----
+
+---    
 [server-util](https://www.npmjs.com/package/@pramodaug17/server-util) is a utility package which is [Express](https://www.expressjs.com) compatible. It has many useful utility that can minimize your code.   
 
 ## Install

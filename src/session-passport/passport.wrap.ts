@@ -44,8 +44,8 @@ export class awesomepassport {
         return passport.session();
     }
 
-    public authPassport(strategy: string | string[], cb: (...args: any[])=>void) {
-        return passport.authenticate(strategy, cb);
+    public authPassport(strategy: string | string[], opts: SessionNS.IAuthenticateOptions, cb: (...args: any[])=>void) {
+        return passport.authenticate(strategy, opts, cb);
     }
 
     /**
