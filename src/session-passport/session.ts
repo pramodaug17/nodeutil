@@ -37,24 +37,24 @@ export class exSession {
     /**
      * Getter and Setter Methods
      */
-    get secret(): string | string[] {
-        return this._secret;
-    }
-    set secret(newValue: string | string[]) {
-        this._secret = newValue;
-    }
+    // get secret(): string | string[] {
+    //     return this._secret;
+    // }
+    // set secret(newValue: string | string[]) {
+    //     this._secret = newValue;
+    // }
 
-    get sessionFileStore(): string {
-        return this._sessionFileStore;
-    }
-    set sessionFileStore(newValue: string) {
-        this._sessionFileStore = newValue;
-    }
+    // get sessionFileStore(): string {
+    //     return this._sessionFileStore;
+    // }
+    // set sessionFileStore(newValue: string) {
+    //     this._sessionFileStore = newValue;
+    // }
 
-    get genidFn(): ((req: any) => string) {
-        return this._genidFn;
-    }
-    set genidFn(newValue: ((req: any) => string)) {
-        this._genidFn = newValue;
-    }
+    // get genidFn(): ((req: any) => string) {
+    //     return this._genidFn;
+    // }
+    // set genidFn(newValue: ((req: any) => string)) {
+    //     this._genidFn = newValue;
+    // }
 }

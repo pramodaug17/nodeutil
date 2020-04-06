@@ -51,26 +51,26 @@ export class awesomepassport {
     /**
      * Getter and Setter Methods
      */
-    get serializeFn(): SessionNS.SerializeDeserializeFn {
-        return this._serializeFn;
-    }
-    set serializeFn(newValue: SessionNS.SerializeDeserializeFn) {
-        this._serializeFn = newValue;
-    }
+    // get serializeFn(): SessionNS.SerializeDeserializeFn {
+    //     return this._serializeFn;
+    // }
+    // set serializeFn(newValue: SessionNS.SerializeDeserializeFn) {
+    //     this._serializeFn = newValue;
+    // }
 
-    get deserializeFn(): SessionNS.SerializeDeserializeFn {
-        return this._deserializeFn;
-    }
-    set deserializeFn(newValue: SessionNS.SerializeDeserializeFn) {
-        this._deserializeFn = newValue;
-    }
+    // get deserializeFn(): SessionNS.SerializeDeserializeFn {
+    //     return this._deserializeFn;
+    // }
+    // set deserializeFn(newValue: SessionNS.SerializeDeserializeFn) {
+    //     this._deserializeFn = newValue;
+    // }
 
-    get strategy(): SessionNS.IStrategy | SessionNS.IStrategy[] {
-        return this._strategy;
-    }
-    set strategy(newValue: SessionNS.IStrategy | SessionNS.IStrategy[]) {
-        this._strategy = newValue;
-    }
+    // get strategy(): SessionNS.IStrategy | SessionNS.IStrategy[] {
+    //     return this._strategy;
+    // }
+    // set strategy(newValue: SessionNS.IStrategy | SessionNS.IStrategy[]) {
+    //     this._strategy = newValue;
+    // }
 }
 
 // export let authPassport = passport.authenticate

@@ -17,33 +17,33 @@ class AwSession {
     /**
      * Getter and Setter Method
      */
-    set secret(newValue: string | string[]) {
-        this._exSession.secret = newValue;
-    }
+    // set secret(newValue: string | string[]) {
+    //     this._exSession.secret = newValue;
+    // }
 
-    set sessionFileStore(newValue: string) {
-        this._exSession.sessionFileStore = newValue;
-    }
+    // set sessionFileStore(newValue: string) {
+    //     this._exSession.sessionFileStore = newValue;
+    // }
 
-    set genidFn(newValue: ((req: any) => string)) {
-        this._exSession.genidFn = newValue;
-    }
+    // set genidFn(newValue: ((req: any) => string)) {
+    //     this._exSession.genidFn = newValue;
+    // }
 
-    set serializeFn(newValue: SessionNS.SerializeDeserializeFn) {
-        this._passport.serializeFn = newValue;
-    }
+    // set serializeFn(newValue: SessionNS.SerializeDeserializeFn) {
+    //     this._passport.serializeFn = newValue;
+    // }
 
-    set deserializeFn(newValue: SessionNS.SerializeDeserializeFn) {
-        this._passport.deserializeFn = newValue;
-    }
+    // set deserializeFn(newValue: SessionNS.SerializeDeserializeFn) {
+    //     this._passport.deserializeFn = newValue;
+    // }
 
-    set strategy(newValue: SessionNS.IStrategy) {
-        this._passport.strategy = newValue;
-    }
+    // set strategy(newValue: SessionNS.IStrategy) {
+    //     this._passport.strategy = newValue;
+    // }
 
-    get passport(): awesomepassport {
-        return this._passport;
-    }
+    // get passport(): awesomepassport {
+    //     return this._passport;
+    // }
 
     /**
      * name
