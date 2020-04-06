@@ -17,7 +17,9 @@ gulp.task("clean", () => {
 })
 
 gulp.task("test", () => {
-    return jestcli.run();
+    return jestcli.run([
+        "--testPathPattern=test"
+    ]);
 });
 
 gulp.task("release", gulp.series([
