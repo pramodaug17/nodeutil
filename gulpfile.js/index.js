@@ -1,6 +1,5 @@
 var gulp = require("gulp");
 var ts = require("gulp-typescript");
-var jasmine = require("gulp-jasmine");
 var tsProject = ts.createProject("tsconfig.json");
 // var jest = require("jest");
 
