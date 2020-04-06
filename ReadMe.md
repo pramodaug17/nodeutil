@@ -1,6 +1,7 @@
 # server-util
 ![npm (custom registry)](https://img.shields.io/npm/v/@pramodaug17/server-util/latest?style=plastic)
 ![NPM](https://img.shields.io/npm/l/@pramodaug17/server-util)
+[![Build Status](https://travis-ci.org/pramodaug17/nodeutil.svg?branch=master)](https://travis-ci.org/pramodaug17/nodeutil)
 [![codecov](https://codecov.io/gh/pramodaug17/nodeutil/branch/master/graph/badge.svg)](https://codecov.io/gh/pramodaug17/nodeutil)
 ![GitHub issues](https://img.shields.io/github/issues/pramodaug17/nodeutil)
 ![npm](https://img.shields.io/npm/dw/@pramodaug17/server-util)
