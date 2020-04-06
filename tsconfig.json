@@ -13,8 +13,7 @@
         "types": [
             "node",
             "express-session",
-            "passport",
-            "jasmine"
+            "passport"
         ]
     }
 }
