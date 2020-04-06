@@ -3,6 +3,7 @@ node_js:
   - "10.10.0"
 os:
   - linux
+if: tag IS present
 before_script:
   - npm install -g gulp-cli codecov
 script: 
